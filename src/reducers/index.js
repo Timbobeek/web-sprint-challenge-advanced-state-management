@@ -39,7 +39,7 @@ const reducer = (state= initialState, action)=>{
       };
       return{
         ...state,
-        smurfs: [...state.smurfs, newSmurf]
+        smurfs: [...state.smurfs, newSmurf],
       };
     case ADD_ERROR_VALUE:
       return{

@@ -8,6 +8,7 @@ export const ADD_ERROR_VALUE = 'ADD_ERROR_VALUE';
 
 export const fetchSmurfs = () => {
   return (dispatch) => {
+    console.log('fetchSmurfs')
     dispatch({type:FETCH_START});
     axios.get('http://localhost:3333/smurfs')
       .then(res => {
@@ -21,10 +22,12 @@ export const fetchSmurfs = () => {
 }
 
 export const addSmurf = (smurf) => {
+  console.log('addSmurf')
   return({type:ADD_SMURF, payload:smurf});
 }
 
 export const addErrorValue = (error) => {
+  console.log('addErrorValue')
   return({type:ADD_ERROR_VALUE, payload:error});
 }
 

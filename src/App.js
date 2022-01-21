@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import connect from "react-redux/lib/connect/connect";
+
+import {connect} from 'react-redux';
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -10,20 +11,19 @@ import { fetchSmurfs } from "./actions";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-// const App = ()=> {
-
-//or useEffect ???
 
 class App extends Component{
+  
   componentDidMount(){
+    //console.log('cdm invoked!');
     fetchSmurfs();
   }
 
   render(){
+    //console.log('render invoked');
   return (
     <div className="App">
       <Header />
-
       <main>
         <SmurfList/>
         <AddForm/>
@@ -33,9 +33,11 @@ class App extends Component{
   }
 }
 
-export default App;  /// do I use connect?
+
+
+export default connect(null, {fetchSmurfs})(App);  /// do I use connect?
 
 
 //Task List:
 //done//1. Connect the fetchSmurfs actions to the App component.
-//done//2. Call the fetchSmurfs action when the component mounts.
+//2. Call the fetchSmurfs action when the component mounts.
