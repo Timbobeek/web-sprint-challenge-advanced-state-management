@@ -19,7 +19,7 @@ import {connect} from 'react-redux';
         return <h1>Loading...</h1>;
     }
 
-    // console.log(props)
+    // console.log('1', props)
 
     return(<div className="listContainer">
         {/* <Smurf smurf={testSmurf}/> */}

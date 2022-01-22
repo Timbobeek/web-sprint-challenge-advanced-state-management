@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import {connect, useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -15,7 +15,8 @@ import "./App.css";
 class App extends Component{
   
   componentDidMount(){
-    fetchSmurfs();
+    // console.log(this.props)
+    this.props.fetchSmurfs();
   }
 
   render(){
@@ -35,7 +36,7 @@ class App extends Component{
 
 
 
-export default connect(null, {fetchSmurfs})(App);  /// do I use connect?
+export default connect(null, {fetchSmurfs})(App); 
 
 
 //Task List:
