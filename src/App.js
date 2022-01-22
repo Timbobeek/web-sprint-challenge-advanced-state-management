@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import {connect} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -15,7 +15,6 @@ import "./App.css";
 class App extends Component{
   
   componentDidMount(){
-    //console.log('cdm invoked!');
     fetchSmurfs();
   }
 
@@ -24,6 +23,7 @@ class App extends Component{
   return (
     <div className="App">
       <Header />
+
       <main>
         <SmurfList/>
         <AddForm/>

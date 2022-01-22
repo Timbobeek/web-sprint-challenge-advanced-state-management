@@ -19,6 +19,8 @@ import {connect} from 'react-redux';
         return <h1>Loading...</h1>;
     }
 
+    // console.log(props)
+
     return(<div className="listContainer">
         {/* <Smurf smurf={testSmurf}/> */}
         {smurfs.map(smurf=><Smurf key={smurf.id} smurf={smurf}/>)}
@@ -26,9 +28,13 @@ import {connect} from 'react-redux';
 }
 
 const mapStateToProps = state => {
+
+    // console.log('mapStateToProps',state)
+
     return {
-        smurfs: [],
-        isLoading: false
+        smurfs: state.smurfs,
+        isLoading: false,
+        error: state.error
     }
 }
 

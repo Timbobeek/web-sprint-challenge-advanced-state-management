@@ -21,9 +21,9 @@ export const fetchSmurfs = () => {
   }
 }
 
-export const addSmurf = (smurf) => {
-  console.log('addSmurf')
-  return({type:ADD_SMURF, payload:smurf});
+export const addSmurf = (name, nickname, position, description) => {
+  axios.post('http://localhost:3333/smurfs', {name, nickname, position, description});
+  return({type:ADD_SMURF, payload:{name, nickname, position, description}});
 }
 
 export const addErrorValue = (error) => {
